@@ -75,7 +75,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-pink-500 w-full pt-[2rem] px-3 select-none pb-3  h-full pb-4">
+    <div className="bg-pink-500 w-full pt-[2rem] px-3 select-none pb-3">
       <div className="flex items-center  flex-col text-center bg-white w-full md:w-[500px] m-auto py-5 rounded-md">
         <h1 className="text-4xl font-bold mb-6">To Do App</h1>
         <form onSubmit={handleSubmit}>
