@@ -102,7 +102,7 @@ const App = () => {
               <div key={task.id} className="mt-5 text-left">
                 {task.completed ? (
                   <h1
-                    className="px-4 py-2 bg-gray-300 w-[85vw] md:w-[450px] text-xl line-through flex justify-between items-center decoration-solid rounded-ml"
+                    className="overflow-x-auto px-4 py-2 bg-gray-300 w-[85vw] md:w-[450px] text-xl line-through flex justify-between flex-wrap items-center decoration-solid rounded-ml"
                     onDoubleClick={() => completeTask(task.id)}
                   >
                     <div>
@@ -122,7 +122,7 @@ const App = () => {
                   </h1>
                 ) : (
                   <h1
-                    className="px-4 py-2 bg-gray-200 w-[85vw] md:w-[450px] text-xl flex justify-between items-center rounded-ml"
+                    className="overflow-x-auto  px-4 py-2 bg-gray-200 w-[85vw] md:w-[450px] text-xl flex flex-wrap justify-between items-center rounded-ml"
                     onDoubleClick={() => completeTask(task.id)}
                   >
                     <div>
