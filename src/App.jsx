@@ -13,6 +13,22 @@ const App = () => {
     }
   }, []);
 
+  const helper = () => {
+    const newTask = {
+      id: Math.floor(Math.random() * 1000),
+      task: input,
+      completed: false,
+    };
+
+    setTasks([...tasks, newTask]);
+
+    setInput("");
+
+    if (tasks) {
+      localStorage.setItem("localTasks", JSON.stringify([...tasks, newTask]));
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -59,7 +75,7 @@ const App = () => {
   };
 
   return (
-    <div className="bg-pink-500 w-full h-screen pt-[2rem] px-3 select-none">
+    <div className="bg-pink-500 w-full h-screen pt-[2rem] px-3 select-none overflow-hidden landscape:h-full pb-3">
       <div className="flex items-center  flex-col text-center bg-white  w-full md:w-[500px] m-auto py-5 rounded-md">
         <h1 className="text-4xl font-bold mb-6">To Do App</h1>
         <form onSubmit={handleSubmit}>
@@ -71,7 +87,11 @@ const App = () => {
               onChange={(e) => setInput(e.target.value)}
             />
             <div className="p-[0.69rem] ml-1 bg-pink-300">
-              <AiOutlinePlus className="text-white" size={20}></AiOutlinePlus>
+              <AiOutlinePlus
+                onClick={() => helper()}
+                className="text-white"
+                size={20}
+              ></AiOutlinePlus>
             </div>
           </div>
         </form>
